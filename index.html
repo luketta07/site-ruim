@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Catálogo de Itens Medievais</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cinzel', serif;
+      background-image: url('https://www.transparenttextures.com/patterns/parchment.png');
+      background-color: #f4e4bc;
+      margin: 40px;
+      text-align: center;
+      color: #2c1b07;
+    }
+    h1 {
+      font-size: 2.5em;
+      color: #4a2c0d;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      border-bottom: 3px solid #8b5a2b;
+      padding-bottom: 10px;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #4a2c0d;
+      margin-top: 40px;
+    }
+    .elemento {
+      background-color: #e6d5a7;
+      border: 4px solid #8b5a2b;
+      border-radius: 8px;
+      padding: 15px;
+      margin: 15px auto;
+      width: 450px;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      font-size: 1.2em;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+    .elemento:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+    .selected {
+      background-color: #8b5a2b;
+      color: #fff;
+      border-color: #d4a017;
+    }
+    .elemento::before {
+      content: '✠';
+      position: absolute;
+      top: -10px;
+      left: -10px;
+      font-size: 1.5em;
+      color: #8b5a2b;
+    }
+    .item-image {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border: 2px solid #8b5a2b;
+      border-radius: 4px;
+    }
+    .item-details {
+      text-align: left;
+      font-size: 0.9em;
+    }
+    .system-explanation {
+      width: 600px;
+      margin: 20px auto;
+      text-align: left;
+      font-size: 1.1em;
+    }
+    .naipe-copas { color: #ff0000; }
+    .naipe-ouros { color: #d4a017; }
+    .naipe-paus { color: #006400; }
+    .naipe-espadas { color: #000000; }
+  </style>
+</head>
+<body>
+  <h1>Catálogo de Itens Medievais</h1>
+
+  <!-- Adaga -->
+  <div class="elemento" onclick="selectItem(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/1664/1664111.png" alt="Adaga" class="item-image">
+    <span>Adaga</span>
+    <div class="item-details">
+      <p><strong>Naipe:</strong> <span class="naipe-espadas">Espadas (♠)</span></p>
+      <p><strong>Especificações:</strong> Arma curta e leve, ideal para ataques rápidos. Causa 3 de dano base. Peso: 1 kg. Comprimento: 30 cm.</p>
+      <p><strong>Efeitos no Baralho:</strong></p>
+      <ul>
+        <li><strong>Pares 2, 4:</strong> Golpe rápido de 3 de dano.</li>
+        <li><strong>Ímpares 1, 3, 5:</strong> Causa 2 de dano, mas +20% chance de ataque duplo.</li>
+        <li><strong>Pares 6, 8, 10:</strong> Golpe preciso, 5 de dano com +15% crítico.</li>
+        <li><strong>Ímpares 7, 9, 11, 13:</strong> Ataque furtivo, 7 de dano ignorando armadura.</li>
+        <li><strong>12 (Coringa):</strong> Combo mortal, 10 de dano em 3 golpes rápidos, mas 15% de chance de falhar.</li>
+      </ul>
+      <p><strong>Preço:</strong> 25 moedas de ouro</p>
+    </div>
+  </div>
+
+  <!-- Foice -->
+  <div class="elemento" onclick="selectItem(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/8521/8521429.png" alt="Foice" class="item-image">
+    <span>Foice</span>
+    <div class="item-details">
+      <p><strong>Naipe:</strong> <span class="naipe-espadas">Espadas (♠)</span></p>
+      <p><strong>Especificações:</strong> Arma curva com longo alcance, causa 7 de dano base. Peso: 4 kg. Comprimento: 120 cm.</p>
+      <p><strong>Efeitos no Baralho:</strong></p>
+      <ul>
+        <li><strong>Pares 2, 4:</strong> Corte comum de 7 de dano.</li>
+        <li><strong>Ímpares 1, 3, 5:</strong> 5 de dano com +10% chance de causar sangramento.</li>
+        <li><strong>Pares 6, 8, 10:</strong> Golpe giratório, 10 de dano em área.</li>
+        <li><strong>Ímpares 7, 9, 11, 13:</strong> Causa 12 de dano, mas gasta 5 de estamina.</li>
+        <li><strong>12 (Coringa):</strong> Ceifada mortal, 20 de dano instantâneo, mas 20% de chance de cair no chão.</li>
+      </ul>
+      <p><strong>Preço:</strong> 100 moedas de ouro</p>
+    </div>
+  </div>
+
+  <!-- Espada Fraca -->
+  <div class="elemento" onclick="selectItem(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/3662/3662817.png" alt="Espada Fraca" class="item-image">
+    <span>Espada Fraca</span>
+    <div class="item-details">
+      <p><strong>Naipe:</strong> <span class="naipe-espadas">Espadas (♠)</span></p>
+      <p><strong>Especificações:</strong> Espada simples, forjada em ferro barato. Causa 4 de dano base. Peso: 2.5 kg.</p>
+      <p><strong>Efeitos no Baralho:</strong></p>
+      <ul>
+        <li><strong>Pares 2, 4:</strong> Golpe comum, 4 de dano.</li>
+        <li><strong>Ímpares 1, 3, 5:</strong> 2 de dano, mas +20% chance de desarmar inimigo.</li>
+        <li><strong>Pares 6, 8, 10:</strong> 6 de dano com +5 de precisão.</li>
+        <li><strong>Ímpares 7, 9, 11, 13:</strong> 8 de dano crítico, mas perde 2 de durabilidade.</li>
+        <li><strong>12 (Coringa):</strong> Golpe desesperado, 12 de dano, mas espada quebra.</li>
+      </ul>
+      <p><strong>Preço:</strong> 40 moedas de ouro</p>
+    </div>
+  </div>
+
+  <!-- Vela -->
+  <div class="elemento" onclick="selectItem(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/3580/3580054.png" alt="Vela" class="item-image">
+    <span>Vela</span>
+    <div class="item-details">
+      <p><strong>Naipe:</strong> <span class="naipe-copas">Copas (❤️)</span></p>
+      <p><strong>Especificações:</strong> Uma vela encantada que afasta sombras e criaturas das trevas. Peso: 0.3 kg. Uso utilitário.</p>
+      <p><strong>Efeitos no Baralho:</strong></p>
+      <ul>
+        <li><strong>Pares 2, 4:</strong> Espanta sombras próximas, reduz medo em 10%.</li>
+        <li><strong>Ímpares 1, 3, 5:</strong> Brilho fraco, reduz ataque das sombras em 5.</li>
+        <li><strong>Pares 6, 8, 10:</strong> Luz intensa, anula 1 ataque de sombra.</li>
+        <li><strong>Ímpares 7, 9, 11, 13:</strong> Círculo de proteção, reduz dano sombrio em 50% por 1 turno.</li>
+        <li><strong>12 (Coringa):</strong> Luz divina, afasta todas as sombras, mas vela se apaga.</li>
+      </ul>
+      <p><strong>Preço:</strong> 60 moedas de ouro</p>
+    </div>
+  </div>
+
+  <!-- Manopla -->
+  <div class="elemento" onclick="selectItem(this)">
+    <img src="https://cdn-icons-png.flaticon.com/512/3900/3900564.png" alt="Manopla" class="item-image">
+    <span>Manopla</span>
+    <div class="item-details">
+      <p><strong>Naipe:</strong> <span class="naipe-paus">Paus (♣)</span></p>
+      <p><strong>Especificações:</strong> Manopla de ferro reforçado, usada tanto para defesa quanto ataque. Peso: 2 kg.</p>
+      <p><strong>Efeitos no Baralho:</strong></p>
+      <ul>
+        <li><strong>Pares 2, 4:</strong> Bloqueia 5 de dano.</li>
+        <li><strong>Ímpares 1, 3, 5:</strong> Soco de 3 de dano.</li>
+        <li><strong>Pares 6, 8, 10:</strong> Soco poderoso, 7 de dano e +10% chance de atordoar.</li>
+        <li><strong>Ímpares 7, 9, 11, 13:</strong> Contra-ataque, reflete 5 de dano e bloqueia 10.</li>
+        <li><strong>12 (Coringa):</strong> Golpe esmagador, 15 de dano, mas perde 5 de estamina.</li>
+      </ul>
+      <p><strong>Preço:</strong> 80 moedas de ouro</p>
+    </div>
+  </div>
+
+  <h2>Sistema de Naipes do Baralho</h2>
+  <div class="system-explanation">
+    <p><strong>Como funciona o sistema de naipes:</strong></p>
+    <p>Os itens estão associados a naipes de um baralho (Copas, Ouros, Paus, Espadas), e seus efeitos variam conforme a carta sorteada (1 a 13):</p>
+    <ul>
+      <li><strong>Pares 2, 4:</strong> Efeito base do item.</li>
+      <li><strong>Ímpares 1, 3, 5:</strong> Efeito secundário, geralmente mais fraco ou situacional.</li>
+      <li><strong>Pares 6, 8, 10:</strong> Efeito aprimorado.</li>
+      <li><strong>Ímpares 7, 9, 11, 13:</strong> Efeito crítico, poderoso, mas com custo.</li>
+      <li><strong>12 (Coringa):</strong> Efeito único e imprevisível.</li>
+    </ul>
+    <p><strong>Naipes:</strong></p>
+    <ul>
+      <li><span class="naipe-copas"><strong>Copas (❤️):</strong></span> Itens de cura ou suporte.</li>
+      <li><span class="naipe-ouros"><strong>Ouros (♦):</strong></span> Itens de utilidade ou riqueza.</li>
+      <li><span class="naipe-paus"><strong>Paus (♣):</strong></span> Itens defensivos ou de força.</li>
+      <li><span class="naipe-espadas"><strong>Espadas (♠):</strong></span> Itens ofensivos.</li>
+    </ul>
+  </div>
+
+  <!-- Botão para ir ao Placar -->
+  <div style="text-align: center; margin-top: 30px;">
+    <button onclick="window.location.href='placar.html'" 
+      style="
+        background-color: #8b5a2b;
+        color: white;
+        font-weight: bold;
+        padding: 12px 20px;
+        border-radius: 8px;
+        border: 2px solid #d4a017;
+        cursor: pointer;
+        transition: transform 0.2s, background 0.2s;
+      "
+      onmouseover="this.style.backgroundColor='#d4a017'; this.style.transform='scale(1.05)';"
+      onmouseout="this.style.backgroundColor='#8b5a2b'; this.style.transform='scale(1)';"
+    >
+      Ir para Placar
+    </button>
+  </div>
+
+
+  <script>
+    function selectItem(element) {
+      document.querySelectorAll('.elemento').forEach(item => {
+        item.classList.remove('selected');
+      });
+      element.classList.add('selected');
+      alert('Item selecionado: ' + element.querySelector('span').textContent);
+    }
+  </script>
+</body>
+</html>
